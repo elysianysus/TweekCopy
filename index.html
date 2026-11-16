@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#ffffff" id="theme-color-meta" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Analogue" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Analogue Planner" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="description" content="Analogue Planner (Tweek) is a personal weekly task planner that brings together tasks, notes, whiteboards, RSS, health trackers, and an AI assistant (Muse) — all in one calm, paper-inspired workspace." />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Analogue Planner</title>
+    <script defer src="https://kit.fontawesome.com/c9b4448de0.js" crossorigin="anonymous"></script>
+    <style>
+      html { overscroll-behavior: none; }
+      body { margin: 0; -webkit-tap-highlight-color: transparent; }
+      @supports(padding: env(safe-area-inset-top)) {
+        body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
+  </body>
+</html>
